@@ -1,0 +1,55 @@
+##binary_search
+arr = list(map(int , input().split()))
+low = 0
+high = len(arr) -1
+while low <=high:
+    mid = (low + high)//2
+    if arr[mid] ==1:
+        ans = mid
+        high = mid -1
+    else:
+        low = mid+1
+print(ans)
+
+
+##Lower bound
+def check(mid):
+    if (arr[mid]>=x):
+        return 1
+    else:
+        return 0
+arr = list(map(int , input().split()))
+low = 0
+x = int(input())
+high = len(arr)-1
+ans = len(arr)
+while low <= high:
+    mid = (low + high)//2
+    if check(mid)==1:
+        ans = mid
+        high = mid -1
+    else:
+        low = mid+1
+print(ans)
+
+
+
+##upper bound
+def check(mid):
+    if (arr[mid]>x):
+        return 1
+    else:
+        return 0
+arr = list(map(int , input().split()))
+low = 0
+x = int(input())
+high = len(arr)-1
+ans = len(arr)
+while low <= high:
+    mid = (low + high)//2
+    if check(mid)==1:
+        ans = mid
+        high = mid -1
+    else:
+        low = mid+1
+print(ans)
