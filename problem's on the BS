@@ -1,0 +1,33 @@
+#painter partion 
+
+
+def findLargestMinDistance(boards:list, k:int):
+    def check(mid):
+        painter = 0
+        walls_painted= 0
+        for i in boards:
+            if walls_painted >= i:
+                walls_painted -=i
+            else:
+                painter+=1
+                if painter >k:
+                    return 0
+                walls_painted = mid
+                if walls_painted >=i:
+                    walls_painted -=i
+                else:
+                    return 0
+
+        return 1
+            
+    low = 0
+    high = sum(boards)
+    ans = 0
+    while low<=high:
+        mid = (low + high)//2
+        if check(mid)==1:
+            ans = mid 
+            high = mid-1
+        else:
+            low = mid +1
+    return ans
