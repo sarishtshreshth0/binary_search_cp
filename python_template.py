@@ -12,6 +12,17 @@ def power(x, y, p=MOD):
         y //= 2
     return res
 
+## XOR upto n
+def xor_upto(n):
+    if n % 4 == 0:
+        return n
+    elif n % 4 == 1:
+        return 1
+    elif n % 4 == 2:
+        return n + 1
+    else:  # n % 4 == 3
+        return 0
+
 ## gcd and lcm
 def gcd(a, b): return math.gcd(a, b)
 def lcm(a, b): return (a * b) // gcd(a, b)
