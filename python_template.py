@@ -50,6 +50,10 @@ def sieve(n):
                 is_prime[j] = False
     return [i for i in range(n + 1) if is_prime[i]]
 
+#Ceil Precision Code
+def ceil_div(a, b):
+    return (a + b - 1) // b
+
 def number(): return int(input())
 def numbers(): return map(int , input().split())
 def lists(): return list(map(int, input().split()))
