@@ -50,6 +50,18 @@ def sieve(n):
                 is_prime[j] = False
     return [i for i in range(n + 1) if is_prime[i]]
 
+#kadane's algo , maximum sub
+def maximum_subarray_sum(l):
+    sums = 0
+    maxi = -10**9
+    for i in l:
+        sums += i
+        maxi = max(maxi, sums)
+        if sums < 0:
+            sums = 0
+    return maxi
+
+
 #Ceil Precision Code
 def ceil_div(a, b):
     return (a + b - 1) // b
