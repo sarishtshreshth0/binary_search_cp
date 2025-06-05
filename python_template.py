@@ -3,6 +3,8 @@ import heapq
 from heapq import heappop, heappush
 MOD = 10**9 + 7
 
+## Custom Pair Sorting by Min-Then-Max // min priority , then max
+new.sort(key=lambda x: (min(x), max(x)))
 ## power
 def power(x, y, p=MOD):
     res = 1
