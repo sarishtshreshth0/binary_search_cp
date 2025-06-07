@@ -63,6 +63,15 @@ def maximum_subarray_sum(l):
             sums = 0
     return maxi
 
+## MEX prefix
+pre = [0]*(n)
+seen = set()
+current_mex= 0
+for i in range(n):
+    seen.add(l[i])
+    while current_mex in seen:
+        current_mex +=1
+    pre[i] = current_mex
 
 #Ceil Precision Code
 def ceil_div(a, b):
